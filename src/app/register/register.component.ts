@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   password;
   register(username, password){
     this.service.createUser(username, password)
-      .then(()=> this.route.navigate(['profile']));
+      .then(() => this.route.navigate(['profile']));
   }
 
   ngOnInit() {
