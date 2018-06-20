@@ -20,16 +20,16 @@ export class ProfileComponent implements OnInit {
   user: User = new User();
 
   sections = [];
-  enrollments =[];
+  enrollments = [];
   updateUser(){
     this.service.updateUser(this.user)
-      .then(()=>this.service.findCurrentUser())
-      .then(user => this.user = user)
+      .then(() => this.service.findCurrentUser())
+      .then(user => this.user = user);
   }
 
   disenroll(enrollment){
     this.sectionService.disenrollStudent(enrollment.section._id)
-      .then(()=>this.enrollmentService.findAllEnrollments())
+      .then(sectionId => this.enrollmentService.findEnrollmentsForSection(sectionId))
       .then(enrollments => this.enrollments = enrollments);
   }
 

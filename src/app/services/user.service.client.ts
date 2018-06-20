@@ -5,7 +5,7 @@ export class UserServiceClient{
       username: username,
       password: password
     };
-    return fetch('http://localhost:3000/api/user', {
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/user', {
       body: JSON.stringify(user),
       headers: {'content-type': 'application/json'},
       method: 'post',
@@ -18,7 +18,7 @@ export class UserServiceClient{
       username: username,
       password: password
     };
-    return fetch('http://localhost:3000/api/login', {
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/login', {
       credentials: 'include',
       body: JSON.stringify(credentials),
       headers: {'content-type': 'application/json'},
@@ -27,31 +27,31 @@ export class UserServiceClient{
   }
 
   logout(){
-    return fetch('http://localhost:3000/api/logout', {
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/logout', {
       credentials: 'include',
       method: 'post'
     });
   }
 
   profile(){
-    return fetch('http://localhost:3000/api/profile', {credentials: 'include'})
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/profile', {credentials: 'include'})
       .then(response => response.json());
   }
 
   findUserById(userId){
-    return fetch('http://localhost:3000/api/user' + '/' + userId, {credentials: 'include'})
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/user' + '/' + userId, {credentials: 'include'})
       .then(response => response.json());
   }
 
   findCurrentUser(){
-    return fetch('http://localhost:3000/api/profile',{
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/profile',{
       credentials:'include',
     })
       .then(response => response.json());
   }
 
   updateUser(user){
-    return fetch('http://localhost:3000/api/profile', {
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/profile', {
       credentials: 'include',
       method: 'put',
       body:JSON.stringify(user),

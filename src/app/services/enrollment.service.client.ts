@@ -1,8 +1,8 @@
-export class EnrollmentServiceClient{
+export class EnrollmentServiceClient {
 
-  findAllEnrollments() {
-    return fetch("http://localhost:3000/api/section",{
-      credentials:'include'
+  findEnrollmentsForSection(sectionId) {
+    return fetch('https://bhargavi-padhya-mean-server.herokuapp.com/api/section/SID'.replace('SID', sectionId), {
+      credentials: 'include'
     })
       .then(response => response.json());
   }
