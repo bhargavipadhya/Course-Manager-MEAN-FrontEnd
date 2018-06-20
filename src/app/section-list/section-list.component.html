@@ -1,0 +1,11 @@
+<div class='container-fluid'>
+  <br/>
+  <h5> Sections Available for course {{courseId}}: </h5>
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item">
+      {{section.sectionName}} [Seats Available: {{section.seats}}]
+      <button (click)="enroll(section)"  class="btn btn-outline-success float-right">Enroll</button>
+    </li>
+  </ul>
+
+</div>
